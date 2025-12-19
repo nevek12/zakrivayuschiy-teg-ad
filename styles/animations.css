@@ -9,3 +9,113 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+/* ===== Keyframes ===== */
+
+@keyframes arrow-move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes heart-scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes sparks-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== Стили иконки сердца ===== */
+
+.like-icon {
+  cursor: pointer;
+}
+
+/* Скрываем искры по умолчанию */
+.like-icon .sparks {
+  opacity: 0;
+}
+
+/* Группа сердца - центр трансформации */
+.like-icon .heart {
+  transform-origin: center;
+}
+
+/* Исходное состояние - только контур */
+.like-icon .core {
+  fill: none;
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon .main-body {
+  fill: none;
+  transition: fill 0.3s linear;
+}
+
+.like-icon .contour {
+  fill: var(--heart-contour-color);
+  transition: fill 0.1s linear;
+}
+
+/* ===== Состояние :hover для сердца ===== */
+
+.like-icon:hover .core {
+  fill: var(--heart-contour-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--heart-contour-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+/* ===== Состояние :active для сердца ===== */
+
+.like-icon:active .core {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+/* ===== Состояние is-liked (клик) ===== */
+
+.like-icon.is-liked .core {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 0.1s alternate;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-appear 0.3s ease-in 0.3s forwards;
+}

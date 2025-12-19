@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+  <defs>
+    <symbol id="floppy-icon" viewBox="0 0 28 28">
+      <path d="M2 26H26V2H6L2 6V26Z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M6 2L2 6H6V2Z" fill="currentColor"/>
+      <rect x="6" y="14" width="16" height="10" fill="currentColor"/>
+      <rect x="10" y="2" width="10" height="8" fill="currentColor"/>
+      <rect x="12" y="4" width="4" height="4" fill="white"/>
+    </symbol>
+  </defs>
+</svg>
